@@ -33,7 +33,7 @@ class ProfileCard extends Component {
                     <h3>{user.name ? user.name : user.username}</h3>
                     <p>@{user.username}</p>
                   </div>
-                  {mode === "myProfile" && (
+                  {(mode === "myProfile" || mode === "akis") && (
                     <div
                       className="ui blue button duzenle a-more-radius"
                       onClick={() => this.setState({ editModalShow: true })}
@@ -54,7 +54,7 @@ class ProfileCard extends Component {
                     <a
                       href={
                         user.website
-                          ? user.website
+                          ? "http://" + user.website
                           : "https://www.referandombeta.herokuapp.com"
                       }
                     >

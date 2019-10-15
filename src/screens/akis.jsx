@@ -43,19 +43,22 @@ class Akis extends Component {
                 <div className="ui stackable grid basic segment" id="akis">
                   <div className="ui rail" style={{ width: "31.3%" }}>
                     <div className="ui sticky fixed top  a-sticky">
-                      <ProfileCard />
+                      <ProfileCard mode="akis" />
                       <FooterCard />
                     </div>
                   </div>
                   <div className="five wide column sidebar mobile-hidden" />
                   <div className="eleven wide column" id="onergeler">
-                    {this.props.data.map(element => (
-                      <VoteCardForAkis
-                        key={element._id}
-                        data={element}
-                        history={this.props.history}
-                      />
-                    ))}
+                    {this.props.data
+                      .slice(0)
+                      .reverse()
+                      .map(element => (
+                        <VoteCardForAkis
+                          key={element._id}
+                          data={element}
+                          history={this.props.history}
+                        />
+                      ))}
                   </div>
                 </div>
               </main>

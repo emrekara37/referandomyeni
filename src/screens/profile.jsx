@@ -15,10 +15,10 @@ import {
 class Profile extends Component {
   async componentDidMount() {
     this.props.onUiStartLoading();
-    const id = this.props.history.location.pathname.slice(7);
-    if (this.props.mode === "visit")
+    if (this.props.mode === "visit") {
+      const id = this.props.history.location.pathname.slice(7);
       await this.props.onGetUserWithDetailsById(id);
-    else await this.props.onGetCurrentUserForProfileMoreDetails();
+    } else await this.props.onGetCurrentUserForProfileMoreDetails();
 
     await this.props.onGetData();
     this.props.onUiFinishLoading();

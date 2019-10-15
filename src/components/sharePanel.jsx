@@ -41,7 +41,7 @@ class SharePanel extends Component {
               className="column i"
               href={`https://api.whatsapp.com/send?text=Referandomda bir önergeye ${
                 vote ? "katılıyorum" : "katılmıyorum"
-              } https://referandom.com/onerge/${_id}`}
+              }  https://referandom.com/onerge/${_id}`}
               target="_blank"
             >
               <i className="whatsapp icon" />

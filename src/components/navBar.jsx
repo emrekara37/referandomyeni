@@ -117,7 +117,9 @@ class NavBar extends FormClass {
             className="link item mobile-hidden"
           >
             <Dropdown.Menu>
-              <Dropdown.Header>{user.username}</Dropdown.Header>
+              <Dropdown.Header className="text-lowercase">
+                @{user.username}
+              </Dropdown.Header>
               <Dropdown.Divider />
               <Dropdown.Item href="/profile">
                 <i className="fa fa-user pr-3" />

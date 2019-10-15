@@ -98,11 +98,12 @@ class VoteCardForAkis extends Component {
   handleVote = async vote => {
     this.setState({ vote });
     const voteCard = { ...this.props.data };
-    voteCard[vote] = this.props.data[vote ? "agree" : "disagree"] + 1;
+    voteCard[vote ? "agree" : "disagree"] =
+      this.props.data[vote ? "agree" : "disagree"] + 1;
     const index = vote ? 0 : 1;
 
     const chartData = { ...this.state.chartData };
-    chartData.datasets[0].data[index] = voteCard[vote];
+    chartData.datasets[0].data[index] = voteCard[vote ? "agree" : "disagree"];
 
     try {
       await this.props.onUpdateVoteCard(voteCard);
@@ -186,7 +187,6 @@ class VoteCardForAkis extends Component {
   };
 
   render() {
-    console.log(this.state.indexOfMaxDisagree);
     return (
       <React.Fragment>
         <div className="onerge">
