@@ -28,13 +28,16 @@ class Akis extends Component {
             <section className="desktop-hidden">
               <main className="row justify-content-center d-flex">
                 <div className="col-11 col-sm-10 col-md-9 col-lg-6">
-                  {this.props.data.map(element => (
-                    <VoteCardForAkis
-                      key={element._id}
-                      data={element}
-                      history={this.props.history}
-                    />
-                  ))}
+                  {this.props.data
+                    .slice(0)
+                    .reverse()
+                    .map(element => (
+                      <VoteCardForAkis
+                        key={element._id}
+                        data={element}
+                        history={this.props.history}
+                      />
+                    ))}
                 </div>
               </main>
             </section>
