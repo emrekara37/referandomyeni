@@ -73,6 +73,7 @@ class App extends Component {
               path="/visit"
               render={props => <Profile mode="visit" {...props} />}
             />
+            <Redirect from="/visit/onerge" to="/onerge" />
             <Redirect to="/not-found" />
           </Switch>
         </div>

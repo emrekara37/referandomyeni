@@ -144,13 +144,14 @@ class VoteCardForAkis extends Component {
 
   handleViewAll = () => {
     this.props.onUiScrollPosition(window.pageYOffset);
-    this.props.history.push(`onerge/${this.props.data._id}`);
+    if (this.props.visitedUser)
+      window.location = `https://referandombeta.herokuapp.com/onerge/${this.props.data._id}`;
+    else this.props.history.push(`onerge/${this.props.data._id}`);
   };
 
   handleAddComment = async text => {
     let comment = {
       owner: this.props.user,
-      date: "10 minutes ago",
       text: text,
       vote: this.state.vote,
       upvote: 0,
