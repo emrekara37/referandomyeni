@@ -74,11 +74,6 @@ class App extends Component {
               render={props => <Profile mode="visit" {...props} />}
             />
             <Redirect to="/not-found" />
-            <Redirect
-              exact
-              to="https://www.referandom.com"
-              from="http://www.referandom.com"
-            ></Redirect>
           </Switch>
         </div>
       </React.Fragment>
