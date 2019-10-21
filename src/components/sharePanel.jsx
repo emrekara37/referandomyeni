@@ -1,13 +1,12 @@
 import React, { Component } from "react";
+import { url } from "../config.json";
 
 class SharePanel extends Component {
   state = { copied: false };
   handleCopy = () => {
     this.setState({ copied: true });
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(
-        `https://referandom.com/onerge/${this.props.data._id}`
-      );
+      navigator.clipboard.writeText(`${url}onerge/${this.props.data._id}`);
     }
 
     setTimeout(() => this.setState({ copied: false }), 860);
@@ -23,7 +22,7 @@ class SharePanel extends Component {
           <div className="ui four column grid">
             <a
               className="column i"
-              href={`javascript:fbShare('https://referandom.com/onerge/${_id}', 'Referandomda bir önergeye ${
+              href={`javascript:fbShare('${url}onerge/${_id}', 'Referandomda bir önergeye ${
                 vote ? "katılıyorum" : "katılmıyorum"
               }`}
             >
@@ -31,7 +30,7 @@ class SharePanel extends Component {
             </a>
             <a
               className="column i"
-              href={`http://twitter.com/intent/tweet?text=https%3A%2F%2Freferandom.com%2Fonerge%2F${_id}`}
+              href={`http://twitter.com/intent/tweet?text=${url}%2Fonerge%2F${_id}`}
               target="_blank"
               data-lang="tr"
             >
@@ -40,8 +39,8 @@ class SharePanel extends Component {
             <a
               className="column i"
               href={`https://api.whatsapp.com/send?text=Referandomda bir önergeye ${
-                vote ? "katılıyorum" : "katılmıyorum"
-              }  https://referandom.com/onerge/${_id}`}
+                vote ? "katılıyorum." : "katılmıyorum."
+              }  ${url}onerge/${_id}`}
               target="_blank"
             >
               <i className="whatsapp icon" />

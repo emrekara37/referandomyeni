@@ -19,6 +19,7 @@ import {
   uiExpandVoteCard,
   uiScrollPosition
 } from "../store/actions/index";
+import { url } from "../config.json";
 
 class VoteCardForAkis extends Component {
   state = {
@@ -145,7 +146,7 @@ class VoteCardForAkis extends Component {
   handleViewAll = () => {
     this.props.onUiScrollPosition(window.pageYOffset);
     if (this.props.visitedUser)
-      window.location = `https://referandombeta.herokuapp.com/onerge/${this.props.data._id}`;
+      window.location = `${url}onerge/${this.props.data._id}`;
     else this.props.history.push(`onerge/${this.props.data._id}`);
   };
 
