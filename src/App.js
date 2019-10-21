@@ -77,7 +77,7 @@ class App extends Component {
             <Redirect
               exact
               to="https://www.referandom.com"
-              from="http://referandom.com"
+              from="http://www.referandom.com"
             ></Redirect>
           </Switch>
         </div>
