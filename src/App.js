@@ -21,6 +21,14 @@ class App extends Component {
 
   async componentDidMount() {
     await this.props.onGetCurrentUser();
+    if (!window.location.host.startsWith("www")) {
+      window.location =
+        window.location.protocol +
+        "//" +
+        "www." +
+        window.location.host +
+        window.location.pathname;
+    }
   }
 
   handleSidebarShow = () => this.setState({ sidebarShow: true });
