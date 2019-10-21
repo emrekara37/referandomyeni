@@ -47,6 +47,7 @@ class Profile extends Component {
 
                   {this.props.user &&
                     this.props.user.votedCards
+                      .slice(0)
                       .reverse()
                       .map(
                         element =>
@@ -86,6 +87,7 @@ class Profile extends Component {
                   <div className="eleven wide column" id="onergeler">
                     {this.props.user &&
                       this.props.user.votedCards
+                        .slice(0)
                         .reverse()
                         .map(
                           element =>
