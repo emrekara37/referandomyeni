@@ -46,23 +46,25 @@ class Profile extends Component {
                   />
 
                   {this.props.user &&
-                    this.props.user.votedCards.map(
-                      element =>
-                        element.mainCard && (
-                          <VoteCardForAkis
-                            visitedUser={
-                              this.props.mode === "visit"
-                                ? this.props.user
-                                : null
-                            }
-                            key={element._id}
-                            data={this.findVoteCard(element.mainCard._id)}
-                            vote={element.vote}
-                            history={this.props.history}
-                            mode="profile"
-                          />
-                        )
-                    )}
+                    this.props.user.votedCards
+                      .reverse()
+                      .map(
+                        element =>
+                          element.mainCard && (
+                            <VoteCardForAkis
+                              visitedUser={
+                                this.props.mode === "visit"
+                                  ? this.props.user
+                                  : null
+                              }
+                              key={element._id}
+                              data={this.findVoteCard(element.mainCard._id)}
+                              vote={element.vote}
+                              history={this.props.history}
+                              mode="profile"
+                            />
+                          )
+                      )}
                 </div>
               </main>
             </section>
@@ -83,23 +85,25 @@ class Profile extends Component {
                   <div className="five wide column sidebar mobile-hidden" />
                   <div className="eleven wide column" id="onergeler">
                     {this.props.user &&
-                      this.props.user.votedCards.map(
-                        element =>
-                          element.mainCard && (
-                            <VoteCardForAkis
-                              visitedUser={
-                                this.props.mode === "visit"
-                                  ? this.props.user
-                                  : null
-                              }
-                              key={element._id}
-                              data={this.findVoteCard(element.mainCard._id)}
-                              vote={element.vote}
-                              history={this.props.history}
-                              mode="profile"
-                            />
-                          )
-                      )}
+                      this.props.user.votedCards
+                        .reverse()
+                        .map(
+                          element =>
+                            element.mainCard && (
+                              <VoteCardForAkis
+                                visitedUser={
+                                  this.props.mode === "visit"
+                                    ? this.props.user
+                                    : null
+                                }
+                                key={element._id}
+                                data={this.findVoteCard(element.mainCard._id)}
+                                vote={element.vote}
+                                history={this.props.history}
+                                mode="profile"
+                              />
+                            )
+                        )}
                   </div>
                 </div>
               </main>
