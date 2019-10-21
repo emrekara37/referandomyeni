@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import logger from "redux-logger";
+//import logger from "redux-logger";
 
 import voteCardReducer from "./reducers/voteCard";
 import uiReducer from "./reducers/ui";
@@ -15,7 +15,8 @@ const rootReducer = combineReducers({
 });
 
 const configureStore = () => {
-  return createStore(rootReducer, applyMiddleware(thunk, logger));
+  //  return createStore(rootReducer, applyMiddleware(thunk, logger));
+  return createStore(rootReducer, applyMiddleware(thunk));
 };
 
 export default configureStore;
