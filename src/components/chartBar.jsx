@@ -7,7 +7,7 @@ class ChartBar extends Component {
     return (
       <React.Fragment>
         <div className="col">
-          <h4 style={{ color: textColor }}>{name}</h4>
+          <h4 style={{ color: "white" }}>{name}</h4>
           {meclis[parti].agree === 0 && meclis[parti].disagree === 0 && (
             <Progress
               className="bg-secondary border border-light"
