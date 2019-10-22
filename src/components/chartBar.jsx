@@ -8,14 +8,22 @@ class ChartBar extends Component {
       <React.Fragment>
         <div className="col">
           <h4 style={{ color: textColor }}>{name}</h4>
-          <Progress
-            className="bg-danger border border-light"
-            percent={
-              (meclis[parti].agree * 100) /
-              (Number(meclis[parti].agree) + Number(meclis[parti].disagree))
-            }
-            success
-          />
+          {meclis[parti].agree === 0 && meclis[parti].disagree === 0 && (
+            <Progress
+              className="bg-secondary border border-light"
+              percent={100}
+            />
+          )}
+          {!(meclis[parti].agree === 0 && meclis[parti].disagree === 0) && (
+            <Progress
+              className="bg-danger border border-light"
+              percent={
+                (meclis[parti].agree * 100) /
+                (Number(meclis[parti].agree) + Number(meclis[parti].disagree))
+              }
+              success
+            />
+          )}
         </div>
       </React.Fragment>
     );
