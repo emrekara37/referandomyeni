@@ -191,7 +191,7 @@ class VoteCardForAkis extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="onerge">
+        <div className={`onerge ${this.props.data.notDisplay ? "d-none" : ""}`}>
           {!this.props.data.expired && (
             <Onerge
               data={this.props.data}
